@@ -39,6 +39,7 @@
 		<module>hystrix-dashboard</module>
 		<module>departmentservice</module>
 		<module>user-service</module>
+		<module>JWT-Demo</module>
 	</modules>
 
 	<build>

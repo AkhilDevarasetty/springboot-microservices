@@ -24,6 +24,15 @@ spring:  application:    name: API-SERVICE
           args:
             name: DEPARTMENT-SERVICE
             fallbackuri: forward:/departmentServiceFallBack
+      - id: JWT-SERVICE
+        uri: lb://JWT-SERVICE
+        predicates:
+        - Path=/auth/**
+        filters:
+        - name: CircuitBreaker
+          args:
+            name: JWT-SERVICE
+            fallbackuri: forward:/departmentServiceFallBack
 hystrix:
   command:
     default:
